@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTitle from '../sectionTitle/SectionTitle'
-import CenterMode from '../carousel/Carousel'
+import SlickSlider from '../carousel/Carousel'
+import DarkSection from '../darkBackground/DarkBackground'
 
-const DarkSection = styled.div`
-	background-color:var(--color-black);	
-	height:100vh;	
-
+const SliderContainer =styled.div`
+	
+	max-width:1440px;
+	height:600px;
+	margin:auto;
 `;
 function featuredSection() {
   return (
@@ -15,10 +17,11 @@ function featuredSection() {
 				<SectionTitle
 					title="Featured Projects"
 				/>
-				<CenterMode></CenterMode>
+				<SliderContainer>
+					<SlickSlider></SlickSlider>
+				</SliderContainer>				
 			</DarkSection>
-		</>
-  
+		</>  
 	);
 }
 

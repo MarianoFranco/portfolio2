@@ -9,6 +9,8 @@ import Main from '../components/main/Main'
 import Footer from '../components/footer/Footer'
 import Hero from '../components/hero/Hero'
 import FeaturedSection from '../components/featuredSection/FeaturedSection'
+import AboutMeSection from '../components/aboutmeSection/AboutMeSection'
+import ContactSection from '../components/contactSection/ContactSection'
 
 
 
@@ -25,6 +27,9 @@ export default function Home() {
 		<Main>
 			<Hero></Hero>
 			<FeaturedSection></FeaturedSection>
+			<AboutMeSection></AboutMeSection>
+			<ContactSection></ContactSection>
+			
 		</Main>
 		<Footer>
 			Footer Section

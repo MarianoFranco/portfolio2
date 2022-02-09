@@ -6,6 +6,9 @@ const Title = styled.h2`
     font-family:var(--font-headings);
     font-size:var(--font-size-huge);
     padding:var(--size-jumbo);
+    max-width:1440px;
+    margin:auto;
+    z-index:5;
 `;
 
 
