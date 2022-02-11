@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import Card from '../card/Card'
+import projectsData from '../../data/projectData'
 
 const SliderContainer = styled(Slider)`
    
@@ -34,7 +35,10 @@ const SliderContainer = styled(Slider)`
     }
 `;
 
+
+
 export default class SlickSlider extends Component {
+
   render() {
     const settings = {
         className: "center",
@@ -50,14 +54,11 @@ export default class SlickSlider extends Component {
         autoplaySpeed:5000
     };
     return (
-        <div>            
+
+        <div> 
             <SliderContainer {...settings} >
-                <Card imageSrc="/images/nomada/1.jpg" imageName="Blog Portrait"></Card>   
-                <Card imageSrc="/images/lvlup/lvlup.jpg" imageName="Gaming Portrait"></Card>    
-                <Card imageSrc="/images/technoland/1.jpg" imageName="Museum Portrait"></Card>    
-                <Card imageSrc="/images/nomada/1.jpg" imageName="Blog Portrait"></Card>   
-                <Card imageSrc="/images/lvlup/lvlup.jpg" imageName="Gaming Portrait"></Card>    
-                <Card imageSrc="/images/technoland/1.jpg" imageName="Museum Portrait"></Card>                                  
+                {projectsData.map(project => <Card key={project.title} imageSrc={project.imageSrc} imageName={project.title} usedLanguages={project.usedLanguages}></Card> )}
+               
             </SliderContainer>
         </div>
     );

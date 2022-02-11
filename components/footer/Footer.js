@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
     .footer__content{
         max-width:1440px;
         margin:auto;
+       
     }
     .footer__line {
         height: 1px;
@@ -17,11 +18,11 @@ const FooterContainer = styled.footer`
        display:flex;
        justify-content:flex-end;
        align-items:center;
-       height:300px;
+       height:200px;
     }
     .icons__link{        
         margin: 20px;
-        font-size:4rem;
+        font-size:var(--font-size-xxl);
         color:white;
     }
     .copyright {

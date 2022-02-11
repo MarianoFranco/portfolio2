@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Link from 'next/link' 
-const CardContainer = styled.div`
+
+const CardContainer = styled.a`
     width:350px;
     height:350px;
     display: flex;
@@ -98,23 +99,24 @@ const Icons = styled(Icon)`
     color:var(--color-secondary);
     margin: 0 10px;
 `;
-function Card( {imageSrc, imageName}) {
+function Card( {imageSrc, imageName, usedLanguages}) {
   return (
     <>
-        <CardContainer >            
-            <ImageContainer>
-                <ImageElement src={imageSrc} alt={imageName} layout="fill"></ImageElement>
-            </ImageContainer>
-            <div className="card__data">
-				<h3 className="card__title">Science museum</h3>					
-				<p className="card__text">This was my semester project. It was a Science museum website</p>	
-                <div className="card__icons-container">
-                    <Icons icon="ci:html5" />
-                    <Icons icon="ci:css3" />
-                    <Icons icon="ci:javascript" />
-                </div>		      
-			</div>
-        </CardContainer>
+        <Link href="http://www.google.com" passHref>
+            <CardContainer>         
+                    <ImageContainer>
+                        <ImageElement src={imageSrc} alt={imageName} layout="fill"></ImageElement>
+                    </ImageContainer>
+                    <div className="card__data">
+                        <h3 className="card__title">Science museum</h3>					
+                        <p className="card__text">This was my semester project. It was a Science museum website</p>	
+                        <div className="card__icons-container">                   
+                            {usedLanguages.map(icondata => <Icons key={icondata.icon} icon={icondata.icon} /> )}                   
+                        </div>		      
+                    </div>                   
+            
+            </CardContainer>
+        </Link>       
     </>
   )
 }

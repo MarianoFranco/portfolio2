@@ -12,10 +12,10 @@ const Title = styled.h2`
 `;
 
 
-function SectionTitle({title}) {
+function SectionTitle({title, id}) {
     
   return (
-    <Title>
+    <Title id={id}>
         {title}
     </Title>
   )

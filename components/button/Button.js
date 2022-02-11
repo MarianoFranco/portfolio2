@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
-const PrimaryBtn = styled.button`
+const PrimaryBtn = styled.div`
     height: 58px;       
     border-radius: 10px;
     padding: 2px 2px 2px 10px;
@@ -30,7 +30,7 @@ const PrimaryBtn = styled.button`
     }
 `;
 
-const SecondaryBtn = styled.button`
+const SecondaryBtn = styled.div`
     color:red;
     background-color: green;
     
@@ -42,7 +42,7 @@ function Button({text, icon, styleClass}) {
     
     if (styleClass === 'primary') {
         return (
-            <PrimaryBtn className={styleClass} onClick={()=>{}}>
+            <PrimaryBtn className={styleClass} >
                <div>{text}</div><div className="btn__icon-container"><Icon icon={icon} className="btn__icon"/></div> 
             </PrimaryBtn>
         );

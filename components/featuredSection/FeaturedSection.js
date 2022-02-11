@@ -5,7 +5,7 @@ import SlickSlider from '../carousel/Carousel'
 import DarkSection from '../darkBackground/DarkBackground'
 
 const SliderContainer =styled.div`
-	
+	width:100%;
 	max-width:1440px;
 	height:600px;
 	margin:auto;
@@ -16,6 +16,7 @@ function featuredSection() {
 			<DarkSection>
 				<SectionTitle
 					title="Featured Projects"
+					id="projects"
 				/>
 				<SliderContainer>
 					<SlickSlider></SlickSlider>

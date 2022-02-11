@@ -32,7 +32,7 @@ export default function Home() {
 			
 		</Main>
 		<Footer>
-			Footer Section
+			
 		</Footer>
 		
 	</>

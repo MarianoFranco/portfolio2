@@ -2,16 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import styled, {keyframes} from 'styled-components';
 
-const slideIn = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-`;
-
 const Wrapper = styled.div`
     width: 100vw;
     height: 100vh;
@@ -32,21 +22,22 @@ const Button = styled.button`
 
 
 function Sidebar({handleOnClick, isOpen}) {
+    console.log(handleOnClick)
     const navList = [
         {
             link: '/',
             title: 'Home',
         },
         {
-            link: '/projects',
+            link: '#projects',
             title: 'My Projects',
         },
         {
-            link: '/about',
+            link: '#about',
             title: 'About me',
         },
         {
-            link: '/contact',
+            link: '#contact',
             title: 'Contact me',
         },
     ];
@@ -57,34 +48,13 @@ function Sidebar({handleOnClick, isOpen}) {
                 {navList.map(({ link, title }) => (
                     <ul key={link}>
                          <li>
-                            <Link href={link}>
+                            <Link href={link} >
                                 <a >{title}</a>
                             </Link>
                         </li>
                     </ul>                    
                 ))}            
-                {/* <ul>
-                    <li>
-                        <Link href="/">
-                            <a className="menu__link">Home</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/projects">
-                            <a className="menu__link">My projects</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/">
-                            <a className="menu__link">About me</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/">
-                            <a className="menu__link">Contact me</a>
-                        </Link>
-                    </li>
-                </ul> */}
+               
             </nav>
         </Wrapper>
         

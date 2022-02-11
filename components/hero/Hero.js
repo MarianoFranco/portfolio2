@@ -5,26 +5,39 @@ import { Container, Row, Col } from 'react-grid-system';
 import Button from '../button/Button'
 import { Icon } from '@iconify/react';
 import BackgroundBubbles from '../backgroundBubbles/BackgroundBubbles'
+import media from 'styled-media-query'
+import Link from 'next/link'
+
 const Section = styled.section`
-    display:flex;
-    justify-content:center;   
-    align-items:end;
-    height:940px;
+     
+    padding-top: 220px;
+    min-height:940px;
     position:relative;
 `;
 
 const GridStyledContainer = styled(Container)`   
-    width: 100%;
-    max-width:1440px !important; 
-    
-    padding: 0 60px !important;   
+    width: 100%;   
+    height:100%;    
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+   
+
+    .wrapper{
+        max-width:1440px;
+        padding: 0 60px;
+        margin:auto;  
+       
+    }
+      
 `;
 const RowContainer = styled(Row)`
     margin-left:0 !important;
-    margin-right:0 !important;
+    margin-right:0 !important;  
 `;
 const ColumnContainer = styled(Col)`
     padding: 0 !important;
+   
 `;
 
 const TextContainer = styled.div`    
@@ -60,13 +73,12 @@ const DescriptionContainer = styled(TextContainer)`
 `;
 const ButtonsContainer = styled.div`
    
-    display:flex;
+    display:none;
     flex-direction:column;
     align-items:flex-start;
     justify-content: space-around;
-    height:315px;
+    height:315px;    
     position:absolute;
-    top:-230px;
     .button{
         
     }
@@ -80,12 +92,21 @@ const ButtonsContainer = styled.div`
          font-size:var(--font-size-xxl);
          color:var(--color-secondary);
      }
+     ${media.greaterThan("1440px")`
+    
+       display:flex;
+    `}
 `; 
 const ImageContainer = styled.div`
-    width: 553px;
-    height:553px;
-   display:block;
-    
+    min-width:200px;
+    max-width: 553px;
+    width:553px;   
+    display:block;
+    transform:translateX(-110px);
+    ${media.greaterThan("medium")`
+        
+        
+    `}
 `;
 const ScrollButtonContainer = styled.div`
     
@@ -94,9 +115,9 @@ const ScrollButtonContainer = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;  
-    justify-content:flex-end;
+    justify-content:center; 
     font-family:var(--font-headings);
-    margin-top:80px;
+    margin-top:70px;
     
    .text{
        margin:30px 0 20px;
@@ -108,6 +129,70 @@ function Hero() {
   return (
         <> 
             <Section>
+                <BackgroundBubbles></BackgroundBubbles>                     
+                <GridStyledContainer> 
+                    <div className="wrapper">
+                        <RowContainer>
+                            <ColumnContainer lg={6} xl={4}>
+                                <TextContainer>
+                                    <h1 className="title">Hi,<br/>I&apos;m <span className="name"> Mariano</span></h1>
+                                    <h4 className="sub-title">Front-end Developer</h4>
+                                </TextContainer>
+                                <ButtonsContainer>
+                                    <Link href="/#contact" passHref >
+                                        <a>
+                                            <Button
+                                                icon="cil:arrow-right"
+                                                text="Hire me"
+                                                styleClass="primary" 
+                                                className="button"                                    
+                                            >
+                                            </Button> 
+                                        </a>                                    
+                                    </Link>                               
+                                    <div className="line"></div>
+                                    <Link href="mailto:fgmariano87@gmail.com" passHref>
+                                        <a>
+                                            <Icon icon="carbon:email" className="email__icon"/>
+                                        </a>
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/mariano-david-franco-gallo/" passHref>
+                                        <a>
+                                            <Icon icon="ant-design:linkedin-outlined" className="email__icon" />    
+                                        </a>
+                                    </Link>                                                         
+                                </ButtonsContainer>
+                            </ColumnContainer>
+                            <ColumnContainer lg={6} xl={4}>
+                                <ImageContainer>
+                                    <Image src="/images/Mariano-photo1.png"  width="100%" height="100%" layout="responsive" alt="Profile Image" quality="100" priority="true" />
+                                </ImageContainer>                       
+                            </ColumnContainer>
+                            <ColumnContainer lg={12} xl={4}>
+                                <DescriptionContainer>
+                                    <h4 className="sub-title">Based in Norway. I’m a front-end developer with UI/UX designer knowledges.</h4>
+                                    <p className="p-text">I’m a newly graduated front-end developer from Noroff - School of technology and digital media in Norway, and I’m ready to take on the world.</p>
+                                </DescriptionContainer>
+                            </ColumnContainer>
+                        </RowContainer>
+                        <RowContainer>                       
+                            <ColumnContainer>
+                                <Link href="/#projects" passHref >
+                                    <a>
+                                        <ScrollButtonContainer>                                
+                                            <p className="text">My projects</p>
+                                            <Icon icon="dashicons:arrow-down-alt2" />
+                                        </ScrollButtonContainer>  
+                                    </a>                                                      
+                                </Link>                               
+                            </ColumnContainer>    
+                                                
+                        </RowContainer>           
+                    </div>                
+                         
+                </GridStyledContainer>               
+            </Section>
+            {/* <Section>
                 <BackgroundBubbles></BackgroundBubbles>                     
                 <GridStyledContainer>                 
                     <RowContainer>
@@ -132,30 +217,45 @@ function Hero() {
                     <RowContainer>
                         <ColumnContainer >                                                 
                             <ButtonsContainer>
-                                <Button
-                                    icon="cil:arrow-right"
-                                    text="Hire me"
-                                    styleClass="primary" 
-                                    className="button"                                    
-                                >
-                                </Button> 
+                                <Link href="/#contact" passHref >
+                                    <a>
+                                        <Button
+                                            icon="cil:arrow-right"
+                                            text="Hire me"
+                                            styleClass="primary" 
+                                            className="button"                                    
+                                        >
+                                        </Button> 
+                                    </a>                                    
+                                </Link>                               
                                 <div className="line"></div>
-                                <Icon icon="carbon:email" className="email__icon"/>
-                                <Icon icon="ant-design:linkedin-outlined" className="email__icon" />                              
+                                <Link href="mailto:fgmariano87@gmail.com" passHref>
+                                    <a>
+                                        <Icon icon="carbon:email" className="email__icon"/>
+                                    </a>
+                                </Link>
+                                <Link href="https://www.linkedin.com/in/mariano-david-franco-gallo/" passHref>
+                                    <a>
+                                        <Icon icon="ant-design:linkedin-outlined" className="email__icon" />    
+                                    </a>
+                                </Link>                                                         
                             </ButtonsContainer>                                             
                         </ColumnContainer>
                         <ColumnContainer >
-                            <ScrollButtonContainer>
-                                <p className="text">My projects</p>
-                                <Icon icon="dashicons:arrow-down-alt2" />
-                            </ScrollButtonContainer>
+                            <Link href="/#projects" passHref >
+                                <a>
+                                    <ScrollButtonContainer>                                
+                                        <p className="text">My projects</p>
+                                        <Icon icon="dashicons:arrow-down-alt2" />
+                                    </ScrollButtonContainer>  
+                                </a>                                                      
+                            </Link>                               
                         </ColumnContainer>    
                         <ColumnContainer >                          
                         </ColumnContainer>                      
                     </RowContainer>                 
                 </GridStyledContainer>               
-            </Section>
-           
+            </Section>                   */}
         </>
   );
 }
