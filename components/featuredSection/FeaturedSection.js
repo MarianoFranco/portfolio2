@@ -6,9 +6,9 @@ import DarkSection from '../darkBackground/DarkBackground'
 
 const SliderContainer =styled.div`
 	width:100%;
-	max-width:1440px;
-	height:600px;
+	max-width:1440px;	
 	margin:auto;
+	padding-bottom:100px;
 `;
 function featuredSection() {
   return (
@@ -19,8 +19,9 @@ function featuredSection() {
 					id="projects"
 				/>
 				<SliderContainer>
-					<SlickSlider></SlickSlider>
-				</SliderContainer>				
+					<SlickSlider></SlickSlider>	
+				</SliderContainer>
+						
 			</DarkSection>
 		</>  
 	);

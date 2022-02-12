@@ -1,42 +1,70 @@
 import React  from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col, setConfiguration } from 'react-grid-system';
 import Button from '../button/Button'
 import { Icon } from '@iconify/react';
 import BackgroundBubbles from '../backgroundBubbles/BackgroundBubbles'
 import media from 'styled-media-query'
 import Link from 'next/link'
 
-const Section = styled.section`
-     
+setConfiguration({ 
+    breakpoints: [576, 768,1170,1440],
+    containerWidths:[576,768,1170,1440],
+    gutterWidth: 0
+});
+
+const Section = styled.section`     
     padding-top: 220px;
     min-height:940px;
     position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+
+    ${media.lessThan("huge")`    
+        padding-top: 100px;
+    `}
+
+    ${media.lessThan("large")`    
+        padding-top: 100px;
+    `}
+
+    ${media.lessThan("medium")`    
+        padding-top: 100px;
+    `}
 `;
 
 const GridStyledContainer = styled(Container)`   
+    max-width:1440px;
     width: 100%;   
     height:100%;    
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
-   
+    justify-content:flex-end; 
+     
+    .wrapper{      
+        padding: 0 60px;       
 
-    .wrapper{
-        max-width:1440px;
-        padding: 0 60px;
-        margin:auto;  
-       
+        ${media.lessThan("medium")`    
+            padding: 0 20px;
+        `}
     }
       
 `;
 const RowContainer = styled(Row)`
     margin-left:0 !important;
-    margin-right:0 !important;  
+    margin-right:0 !important; 
+    
+    ${media.lessThan("huge")`    
+           align-items:center !important;
+        `} 
 `;
 const ColumnContainer = styled(Col)`
     padding: 0 !important;
+    
+    
    
 `;
 
@@ -100,13 +128,19 @@ const ButtonsContainer = styled.div`
 const ImageContainer = styled.div`
     min-width:200px;
     max-width: 553px;
-    width:553px;   
+    width:126%;   
     display:block;
     transform:translateX(-110px);
-    ${media.greaterThan("medium")`
-        
-        
+     margin:auto;
+     
+    ${media.lessThan("huge")`    
+        min-width:200px;
+        max-width: 553px;
+        width:100%;   
+        display:block;
+        transform:translateX(0);
     `}
+ 
 `;
 const ScrollButtonContainer = styled.div`
     
@@ -117,7 +151,7 @@ const ScrollButtonContainer = styled.div`
     align-items:center;  
     justify-content:center; 
     font-family:var(--font-headings);
-    margin-top:70px;
+    margin:20px 0 ;
     
    .text{
        margin:30px 0 20px;

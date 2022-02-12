@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Image from 'next/image'
 import Link from 'next/link'
 import React, {useState} from 'react';
-
-
+import { Icon } from '@iconify/react';
+import media from 'styled-media-query'
 import Sidebar from "../sidebar/Sidebar";
 
 const Container = styled.div`
@@ -19,11 +19,22 @@ const Container = styled.div`
     left: 50%;
     transform:translateX(-50%);
     z-index: 100;
+
+    ${media.lessThan("medium")`
+            padding:var(--size-md);
+            
+        `}
 `;
 
 const HamburgerButton = styled.button`
     background:none;
     border:none;
+    .menu__icon{
+        font-size:70px;
+        display:flex;
+        align-items:center;
+        color:var(--color-secondary);
+    }
 `;
 
 function Header() {
@@ -36,10 +47,10 @@ function Header() {
                 <a><Image src="/images/logo.png" width="183px" height="50px" alt="logo"></Image></a>
             </Link> 
             <HamburgerButton onClick={()=> setIsOpen(true)}>
-                <Image src="/images/menu.svg" width="70px" height="70px" alt="menu icon"></Image>
-            </HamburgerButton>
-            <Sidebar handleOnClick={()=> setIsOpen(false)} isOpen={isOpen}/>       
+                <i className="menu__icon"><Icon icon="iconoir:menu-scale" rotate={2} /></i>
+            </HamburgerButton>                 
         </Container>
+        <Sidebar handleOnClick={()=> setIsOpen(false)} isOpen={isOpen}/>  
     </div>  
   )
 }

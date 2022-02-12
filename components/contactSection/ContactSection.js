@@ -2,6 +2,7 @@ import React from 'react'
 import DarkBackground from '../darkBackground/DarkBackground'
 import styled from 'styled-components'
 import Button from '../button/Button'
+import Link from 'next/link'
 
 const ContactBackground = styled.div`
     
@@ -49,12 +50,17 @@ function ContactSection() {
             <ContactContainer id="contact">
                 <h3 className="contact__text">Have a project in mind?</h3>
                 <h2 className="contact__text-h2">Just Say Hello!</h2>
-                <div className="contact__button"> 
-                    <Button
-                        text="CONTACT ME"
-                        icon="cil:arrow-right"
-                        styleClass="primary"
-                    ></Button>
+                <div className="contact__button">
+                    <Link href="mailto:fgmariano87@gmail.com" passHref>
+                        <a>
+                            <Button
+                                text="CONTACT ME"
+                                icon="cil:arrow-right"
+                                styleClass="primary"
+                            ></Button>
+                        </a>
+                    </Link> 
+                    
                 </div>              
             </ContactContainer>
         </ContactBackground>

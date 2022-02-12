@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Link from 'next/link' 
+import media from 'styled-media-query'
 
-const CardContainer = styled.a`
-    width:350px;
-    height:350px;
+const CardContainer = styled.a`    
+    height:350px;    
+    max-width:350px;
+    
     display: flex;
     justify-content: center;
     align-items: center;    
-    margin:15px;
+    margin:15px auto;
     border-radius:20px;
     position: relative;
     
@@ -51,6 +53,7 @@ const CardContainer = styled.a`
         text-align: center;
         opacity: 0;
         transition: all 0.4s ease-in-out;
+        
     }
     .card__data:hover {
         opacity: 1;
@@ -74,10 +77,19 @@ const CardContainer = styled.a`
          margin-top:var(--size-md);
      }
      .card__icons-container{
+         
+         display:flex;
+         justify-content:space-evenly;
          position:absolute;
-         top:220px;
          right:0;
+         bottom:50px;
+         
      }
+     ${media.lessThan("medium")`
+    
+        max-width:300px;
+        height:300px;
+    `}
 
 `;
 const ImageContainer = styled.div`
@@ -99,7 +111,7 @@ const Icons = styled(Icon)`
     color:var(--color-secondary);
     margin: 0 10px;
 `;
-function Card( {imageSrc, imageName, usedLanguages}) {
+function Card( {title, imageSrc, imageName, usedLanguages, smallDesc}) {
   return (
     <>
         <Link href="http://www.google.com" passHref>
@@ -108,8 +120,8 @@ function Card( {imageSrc, imageName, usedLanguages}) {
                         <ImageElement src={imageSrc} alt={imageName} layout="fill"></ImageElement>
                     </ImageContainer>
                     <div className="card__data">
-                        <h3 className="card__title">Science museum</h3>					
-                        <p className="card__text">This was my semester project. It was a Science museum website</p>	
+                        <h3 className="card__title">{title}</h3>				
+                        <p className="card__text">{smallDesc}</p>	
                         <div className="card__icons-container">                   
                             {usedLanguages.map(icondata => <Icons key={icondata.icon} icon={icondata.icon} /> )}                   
                         </div>		      

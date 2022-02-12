@@ -10,19 +10,15 @@ const AboutContainer= styled.div`
     padding:var(--size-jumbo);
     position:relative;
     outline: var(--color-primary) solid 3px;
+    
+    ${media.lessThan("medium")`
+        padding:var(--size-md);
+    `}
+
 `;
 
 const BioLayoutContainer = styled.div` 
-    display:flex;
-    max-width:1440px;
-    margin:auto;
-    justify-content:space-between;
-    align-items:center;
-    padding:var(--size-jumbo);
-    flex-direction:column-reverse;
-    gap:20px;
 
-    ${media.greaterThan("large")`
         display:flex;
         max-width:1440px;
         margin:auto;
@@ -30,11 +26,29 @@ const BioLayoutContainer = styled.div`
         align-items:center;
         padding:var(--size-jumbo);
         flex-direction:row;
-        `}
+  
+
+    ${media.lessThan("large")`
+        display:flex;
+        max-width:1440px;
+        margin:auto;
+        justify-content:space-between;
+        align-items:center;
+        padding:var(--size-jumbo);
+        flex-direction:column-reverse;
+        gap:20px;
+    `}
+    ${media.lessThan("medium")`
+        padding:0;
+    `}
     
     .about__data-container{       
         position:relative;
         max-width:50%;
+
+        ${media.lessThan("huge")`
+            max-width:89%;
+        `}
     }
     .about__bio-container{
         color:var(--color-white);
@@ -56,15 +70,35 @@ const BioLayoutContainer = styled.div`
         width:100%;
         height:720px;
         margin-left:50px;
+
+        ${media.lessThan("medium")`
+            margin:0;
+            height:400px;
+        `}
+      
     }
     .about__buttons-container{
         
         display:flex;        
         justify-content:flex-end;
         margin-top: 30px;
+
+        ${media.lessThan("large")`
+           
+            flex-direction:column;
+            justify-content:center;
+            align-items: center;
+            
+        `}
     }
     .about__button{
         margin:20px 0 0 60px;
+
+        ${media.lessThan("huge")`
+           
+            margin:20px auto;
+           
+       `}
     }
 `;
 
@@ -104,9 +138,8 @@ function AboutMeSection() {
                         </div>
                         <div className="about__button">
                             <Button
-                                text="Download CV"
-                                icon="akar-icons:download"
-                                styleClass="primary"
+                                text="Watch more"
+                                icon="akar-icons:info"                                
                                 className="button-customized"
                             ></Button>
                         </div>

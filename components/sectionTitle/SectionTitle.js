@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from 'react'
+import media from 'styled-media-query'
 const Title = styled.h2`
     color:var(--color-white);
     font-weight:bold;
@@ -9,6 +10,10 @@ const Title = styled.h2`
     max-width:1440px;
     margin:auto;
     z-index:5;
+
+    ${media.lessThan("medium")`    
+         padding:var(--size-md);
+    `}
 `;
 
 
