@@ -57,7 +57,7 @@ export default class SlickSlider extends Component {
         infinite: true,
         centerPadding: "0px",
         slidesToShow:3,
-        speed: 2000,
+        speed:800,
         dots: true,
         slidesToScroll: 1,
         arrows: false,
