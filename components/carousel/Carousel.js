@@ -62,7 +62,7 @@ export default class SlickSlider extends Component {
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        autoplaySpeed:800,
+        autoplaySpeed:3000,
         responsive: [
             {
               breakpoint: 1440,
