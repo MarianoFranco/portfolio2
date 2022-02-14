@@ -107,9 +107,8 @@ const ButtonsContainer = styled.div`
     justify-content: space-around;
     height:315px;    
     position:absolute;
-    .button{
-        
-    }
+    z-index:10;
+    
     .line{
         width: 2px;
         height: 84px;
@@ -155,7 +154,8 @@ const ScrollButtonContainer = styled.div`
     
    .text{
        margin:30px 0 20px;
-       
+       text-align: center;
+    text-transform: uppercase;
    }
 `
 
@@ -191,7 +191,7 @@ function Hero() {
                                         </a>
                                     </Link>
                                     <Link href="https://www.linkedin.com/in/mariano-david-franco-gallo/" passHref>
-                                        <a>
+                                        <a target="_blank">
                                             <Icon icon="ant-design:linkedin-outlined" className="email__icon" />    
                                         </a>
                                     </Link>                                                         
@@ -209,7 +209,8 @@ function Hero() {
                                 </DescriptionContainer>
                             </ColumnContainer>
                         </RowContainer>
-                        <RowContainer>                       
+                        <RowContainer>
+                            <ColumnContainer></ColumnContainer>                       
                             <ColumnContainer>
                                 <Link href="/#projects" passHref >
                                     <a>
@@ -220,7 +221,7 @@ function Hero() {
                                     </a>                                                      
                                 </Link>                               
                             </ColumnContainer>    
-                                                
+                            <ColumnContainer></ColumnContainer>            
                         </RowContainer>           
                     </div>                
                          

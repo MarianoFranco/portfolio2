@@ -111,11 +111,11 @@ const Icons = styled(Icon)`
     color:var(--color-secondary);
     margin: 0 10px;
 `;
-function Card( {title, imageSrc, imageName, usedLanguages, smallDesc}) {
+function Card( {title, imageSrc, imageName, usedLanguages, smallDesc, projectLink}) {
   return (
     <>
-        <Link href="http://www.google.com" passHref>
-            <CardContainer>         
+        <Link href={projectLink} passHref>
+            <CardContainer target="_blank">         
                     <ImageContainer>
                         <ImageElement src={imageSrc} alt={imageName} layout="fill"></ImageElement>
                     </ImageContainer>

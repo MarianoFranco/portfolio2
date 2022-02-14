@@ -5,6 +5,7 @@ import SectionTitle from '../sectionTitle/SectionTitle'
 import Image from 'next/image'
 import Button from '../button/Button'
 import media from 'styled-media-query'
+import Link from 'next/link'
 
 const AboutContainer= styled.div`    
     padding:var(--size-jumbo);
@@ -77,25 +78,21 @@ const BioLayoutContainer = styled.div`
         `}
       
     }
-    .about__buttons-container{
-        
+    .about__buttons-container{        
         display:flex;        
         justify-content:flex-end;
         margin-top: 30px;
 
-        ${media.lessThan("large")`
-           
+        ${media.lessThan("large")`           
             flex-direction:column;
             justify-content:center;
-            align-items: center;
-            
+            align-items: center;            
         `}
     }
     .about__button{
         margin:20px 0 0 60px;
 
-        ${media.lessThan("huge")`
-           
+        ${media.lessThan("huge")`           
             margin:20px auto;
            
        `}
@@ -128,22 +125,15 @@ function AboutMeSection() {
 				        <p className="bio__text">With all this knowledge I have been able to carry out some complete web projects. These are adapted to view on any device and you can check them on my projects page.</p>
 			        </div>	
                     <div className="about__buttons-container">
-                        <div className="about__button">
-                            <Button
-                                text="Download CV"
-                                icon="akar-icons:download"
-                                styleClass="primary"
-                                className="button-customized"
-                            ></Button>
-                        </div>
-                        <div className="about__button">
-                            <Button
-                                text="Watch more"
-                                icon="akar-icons:info"                                
-                                className="button-customized"
-                            ></Button>
-                        </div>
-                        
+                        <Link href="https://drive.google.com/file/d/1oG-gy2QJYYwgMwrcSyOEzZ4uUxCGKIMu/view?usp=sharing" passHref >
+                            <a className="about__button" target="_blank">
+                                <Button
+                                    text="Watch my CV"
+                                    icon="akar-icons:download"
+                                    styleClass="secondary"                                    
+                                ></Button>
+                            </a>                                    
+                        </Link>                        
                     </div>
                </div>
                <div className="about__img-container">

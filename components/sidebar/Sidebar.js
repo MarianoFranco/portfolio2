@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     top:0;
     left:0px;    
     transform: translateX(${props => props.isOpen ? "0" : "100%"});                
-    transition: transform 700ms cubic-bezier(0.76, -0.18, 0.35, 1.33);    
+    transition: transform 900ms cubic-bezier(0.76, -0.18, 0.35, 1.33);    
     
     .heading{
         max-width:1440px;
@@ -92,7 +92,7 @@ const Button = styled.button`
 
 
 function Sidebar({handleOnClick, isOpen}) {
-    console.log(handleOnClick)
+   
     const navList = [
         {
             link: '/',

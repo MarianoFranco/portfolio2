@@ -62,7 +62,7 @@ export default class SlickSlider extends Component {
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        autoplaySpeed:10000,
+        autoplaySpeed:800,
         responsive: [
             {
               breakpoint: 1440,
@@ -101,7 +101,7 @@ export default class SlickSlider extends Component {
 
         <div> 
             <SliderContainer {...settings} >
-                {projectsData.map(project => <Card key={project.title} title = {project.title} imageSrc={project.imageSrc} imageName={project.title} usedLanguages={project.usedLanguages} smallDesc={project.smallDesc}></Card> )}
+                {projectsData.map(project => <Card key={project.title} title = {project.title} imageSrc={project.imageSrc} imageName={project.title} usedLanguages={project.usedLanguages} smallDesc={project.smallDesc} projectLink={project.projectLink}></Card> )}
                
             </SliderContainer>
         </div>
