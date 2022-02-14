@@ -1,14 +1,19 @@
 import React from 'react'
-import DarkBackground from '../darkBackground/DarkBackground'
 import styled from 'styled-components'
 import Button from '../button/Button'
 import Link from 'next/link'
+import media from 'styled-media-query'
 
 const ContactBackground = styled.div`
     
     margin:auto;
     padding: var(--size-jumbo);
     background-color: var(--color-black);
+
+    ${media.lessThan("medium")`
+            padding:var(--size-md);
+            
+        `}
 `;
 
 const ContactContainer = styled.div`
