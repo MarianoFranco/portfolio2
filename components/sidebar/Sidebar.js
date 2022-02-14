@@ -85,9 +85,15 @@ const Button = styled.button`
                 translateY(-2px);   
         transition: all 50ms ease-in-out;
     }
-    .close__icon{
+    ${media.lessThan("large")`
+        width: 40px;
+        height: 40px;
 
-    }
+        .close__icon{
+            color: var(--color-secondary);
+            font-size:40px;
+        }
+    `}
 `;
 
 
