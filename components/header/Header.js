@@ -33,8 +33,18 @@ const HamburgerButton = styled.button`
         font-size:70px;
         display:flex;
         align-items:center;
-        color:var(--color-secondary);
+        color:var(--color-secondary);     
     }
+
+    ${media.lessThan("large")`
+      .menu__icon{
+            font-size:40px;
+            display:flex;
+            align-items:center;
+            color:var(--color-secondary);     
+        }
+    `}
+   
 `;
 
 function Header() {
