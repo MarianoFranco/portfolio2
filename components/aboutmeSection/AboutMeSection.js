@@ -125,7 +125,7 @@ function AboutMeSection() {
 				        <p className="bio__text">With all this knowledge I have been able to carry out some complete web projects. These are adapted to view on any device and you can check them on my projects page.</p>
 			        </div>	
                     <div className="about__buttons-container">
-                        <Link href="https://drive.google.com/file/d/1oG-gy2QJYYwgMwrcSyOEzZ4uUxCGKIMu/view?usp=sharing" passHref >
+                        <Link href="https://drive.google.com/file/d/1zw4wWjoTvbFgyiCssADopDkJnZh_Sy63/view?usp=sharing" passHref >
                             <a className="about__button" target="_blank">
                                 <Button
                                     text="Watch my CV"
