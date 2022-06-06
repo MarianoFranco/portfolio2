@@ -87,9 +87,9 @@ const projectsData = [
 		],
 		imageSrc: "/images/holidaze/holidaze-portrait.jpg",
 		smallDesc:
-			"My first project. It is a gaming website, which I connected to a Rest API in the end of my first school year.",
+			"My end of course project. I created a hotel booking, made with NextJs and connected to a Strapi Rest API",
 		desc: "<p >This was my first project of the course. To design the logo and the web use adobe xD. In which I learned to use the color palette and different techniques to apply the effects. As well as to differentiate the UI a bit from the UX.</p><p>In the code section, first use HTML and CSS. And as the year went by, I was able to apply the knowledge I gained from Javascript during the course.</p>",
-		projectLink: "https://lvlupgamesite.netlify.app",
+		projectLink: "https://holidaze-hotel-final-project.vercel.app/",
 	},
 ];
 
