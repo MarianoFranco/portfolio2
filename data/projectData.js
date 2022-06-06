@@ -1,6 +1,6 @@
 const projectsData = [
 	{
-		title: "Campshop",
+		title: "Lvl Up Gaming",
 		usedLanguages: [
 			{
 				icon: "ci:html5",
@@ -12,11 +12,11 @@ const projectsData = [
 				icon: "ci:javascript",
 			},
 		],
-		imageSrc: "/images/campshop/1.jpg",
+		imageSrc: "/images/lvlup/lvlup.jpg",
 		smallDesc:
-			"An e-commerce website that has both customer-facing and admin sections. The project was populated by Strapi API and deployed in Heroku",
+			"My first project. It is a gaming website, which I connected to a Rest API in the end of my first school year.",
 		desc: "<p >This was my first project of the course. To design the logo and the web use adobe xD. In which I learned to use the color palette and different techniques to apply the effects. As well as to differentiate the UI a bit from the UX.</p><p>In the code section, first use HTML and CSS. And as the year went by, I was able to apply the knowledge I gained from Javascript during the course.</p>",
-		projectLink: "https://campshop-sp.netlify.app",
+		projectLink: "https://lvlupgamesite.netlify.app",
 	},
 	{
 		title: "Technoland Museum",
@@ -54,7 +54,7 @@ const projectsData = [
 		projectLink: "https://nomadatravelblog.netlify.app",
 	},
 	{
-		title: "Lvl Up Gaming",
+		title: "Campshop",
 		usedLanguages: [
 			{
 				icon: "ci:html5",
@@ -66,11 +66,11 @@ const projectsData = [
 				icon: "ci:javascript",
 			},
 		],
-		imageSrc: "/images/lvlup/lvlup.jpg",
+		imageSrc: "/images/campshop/1.jpg",
 		smallDesc:
-			"My first project. It is a gaming website, which I connected to a Rest API in the end of my first school year.",
+			"An e-commerce website that has both customer-facing and admin sections. The project was populated by Strapi API and deployed in Heroku",
 		desc: "<p >This was my first project of the course. To design the logo and the web use adobe xD. In which I learned to use the color palette and different techniques to apply the effects. As well as to differentiate the UI a bit from the UX.</p><p>In the code section, first use HTML and CSS. And as the year went by, I was able to apply the knowledge I gained from Javascript during the course.</p>",
-		projectLink: "https://lvlupgamesite.netlify.app",
+		projectLink: "https://campshop-sp.netlify.app",
 	},
 	{
 		title: "Holidaze booking",
