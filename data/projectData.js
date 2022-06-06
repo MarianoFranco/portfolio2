@@ -76,7 +76,7 @@ const projectsData = [
 		title: "Holidaze booking",
 		usedLanguages: [
 			{
-				icon: "logos:nextjs",
+				icon: "akar-icons:nextjs-fill",
 			},
 			{
 				icon: "akar-icons:react-fill",
