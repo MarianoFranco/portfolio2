@@ -28,8 +28,7 @@ export default function Home() {
 			<Hero></Hero>
 			<FeaturedSection></FeaturedSection>
 			<AboutMeSection></AboutMeSection>
-			<ContactSection></ContactSection>
-			
+			<ContactSection></ContactSection>			
 		</Main>
 		<Footer>
 			
