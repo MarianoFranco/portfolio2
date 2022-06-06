@@ -73,16 +73,16 @@ const projectsData = [
 		projectLink: "https://lvlupgamesite.netlify.app",
 	},
 	{
-		title: "Holidaze hotel booking",
+		title: "Holidaze booking",
 		usedLanguages: [
 			{
-				icon: "ci:html5",
+				icon: "logos:nextjs",
 			},
 			{
-				icon: "ci:css3",
+				icon: "akar-icons:react-fill",
 			},
 			{
-				icon: "ci:javascript",
+				icon: "simple-icons:strapi",
 			},
 		],
 		imageSrc: "/images/holidaze/holidaze-portrait.jpg",
