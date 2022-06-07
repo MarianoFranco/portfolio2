@@ -58,6 +58,11 @@ const NavBar = styled.nav`
 		display: flex;
 		align-items: center;
 	}
+	.nav__link:hover {
+		color: var(--color-tertiary);
+		transform: scale(1.05) translateY(-2px);
+		transition: all 50ms ease-in-out;
+	}
 	.nav__icon {
 		margin-right: 30px;
 		font-size: var(--font-size-xxl);
@@ -75,11 +80,11 @@ const Button = styled.button`
 
 	.close__icon {
 		color: var(--color-secondary);
-		font-size: 70px;
+		font-size: 50px;
 	}
 	.close__icon:hover {
 		color: var(--color-tertiary);
-		transform: scale(1.05) translateY(-2px);
+		transform: scale(1.05);
 		transition: all 50ms ease-in-out;
 	}
 	${media.lessThan("large")`
@@ -88,7 +93,7 @@ const Button = styled.button`
 
         .close__icon{
             color: var(--color-secondary);
-            font-size:40px;
+            font-size:30px;
         }
     `}
 `;

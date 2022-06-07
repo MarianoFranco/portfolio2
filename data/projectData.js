@@ -92,7 +92,7 @@ const projectsData = [
 		],
 		imageSrc: "/images/holidaze/holidaze-portrait.jpg",
 		smallDesc:
-			"My final thesis report. I created a hotel booking, made with NextJs and connected to a Strapi Rest API",
+			"My final thesis report. I created a hotel booking, made with NextJs and connected to a Strapi Rest API. In this project, I used all the knowledge I've acquired during these 2 school year.",
 		projectLink: "https://holidaze-hotel-final-project.vercel.app/",
 		githubLink:
 			"https://github.com/MarianoFranco/holidaze-hotel-final-project",
