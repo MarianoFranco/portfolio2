@@ -54,27 +54,60 @@ const CardContainer = styled.div`
 		opacity: 0;
 		transition: all 0.4s ease-in-out;
 		padding: 10px;
+		box-sizing: border-box;
 	}
 	.card__data:hover {
 		opacity: 1;
-		transform: translateY(80px);
+
 		.card__icons-container {
 			left: 50%;
-			transform: translateY(-80px) translateX(-50%);
+			transform: translateX(-50%);
 			transition: all 0.4s ease-in-out;
-			display: flex;
+		}
+		.card__title {
+			transform: translateY(50px);
+			transition: all 0.3s ease-in-out;
+			cursor: pointer;
+		}
+		.card__text {
+			transform: translateY(73px);
+			transition: all 0.3s ease-in-out;
+		}
+		.card__github-link {
+			left: 50%;
+			transform: translateX(-50%);
+			transition: all 0.4s ease-in-out;
 		}
 	}
-	.card__title {
+	.card__title,
+	.card__github-link {
 		font-size: var(--font-size-xl);
 		font-weight: 600;
 		color: #ebe0a6;
 		margin: 0;
+		cursor: pointer;
+	}
+
+	.card__title:hover {
+		text-decoration: underline;
 	}
 	.card__text {
 		font-size: var(--font-size);
 		color: var(--color-white);
 		margin-top: var(--size-md);
+	}
+
+	.card__github-link {
+		font-size: var(--font-size-md);
+		font-weight: 500;
+		position: absolute;
+		right: 0;
+		bottom: 50px;
+		cursor: pointer;
+	}
+	.card__github-link:hover {
+		color: var(--color-tertiary);
+		text-decoration: underline;
 	}
 	.card__icons-container {
 		display: flex;
@@ -82,6 +115,7 @@ const CardContainer = styled.div`
 		position: absolute;
 		right: 0;
 		bottom: 50px;
+		gap: 24px;
 	}
 	${media.lessThan("medium")`
     
@@ -103,10 +137,9 @@ const ImageElement = styled(Image)`
 `;
 
 const Icons = styled(Icon)`
-	width: 45px;
-	height: 45px;
+	width: 40px;
+	height: 40px;
 	color: var(--color-secondary);
-	margin: 0 10px;
 `;
 function Card({
 	title,
@@ -115,6 +148,7 @@ function Card({
 	usedLanguages,
 	smallDesc,
 	projectLink,
+	githubLink,
 }) {
 	return (
 		<>
@@ -128,14 +162,20 @@ function Card({
 				</ImageContainer>
 				<div className="card__data">
 					<Link href={projectLink} passHref>
-						<h3 className="card__title">{title}</h3>
+						<a target="_blank">
+							<h3 className="card__title">{title}</h3>
+						</a>
 					</Link>
 					<p className="card__text">{smallDesc}</p>
-					<div className="card__icons-container">
-						{usedLanguages.map((icondata) => (
-							<Icons key={icondata.icon} icon={icondata.icon} />
-						))}
-					</div>
+					{githubLink && (
+						<Link href={githubLink} passHref>
+							<a target="_blank">
+								<h4 className="card__github-link">
+									Link to Github
+								</h4>
+							</a>
+						</Link>
+					)}
 				</div>
 			</CardContainer>
 		</>

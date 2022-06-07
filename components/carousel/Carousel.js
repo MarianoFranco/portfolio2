@@ -100,6 +100,7 @@ export default class SlickSlider extends Component {
 							usedLanguages={project.usedLanguages}
 							smallDesc={project.smallDesc}
 							projectLink={project.projectLink}
+							githubLink={project.githubLink}
 						></Card>
 					))}
 				</SliderContainer>
