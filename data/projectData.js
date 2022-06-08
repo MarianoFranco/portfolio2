@@ -34,28 +34,7 @@ const projectsData = [
 			"A science museum website. This was my first semester project, in which I could consolidate my knowledge in Adobe xD, for desing, and using flexBox and CSS grids",
 
 		projectLink: "https://thesciencemuseum.netlify.app",
-		githubLink: "",
-	},
-	{
-		title: "Nomada Blog",
-		usedLanguages: [
-			{
-				icon: "ci:html5",
-			},
-			{
-				icon: "ci:css3",
-			},
-			{
-				icon: "ci:javascript",
-			},
-		],
-		imageSrc: "/images/nomada/1.jpg",
-		smallDesc:
-			"A travel blog. This was my first year project. The design was done with Figma and I create a dynamic web which is connected to an API with vanilla Javascript",
-
-		projectLink: "https://nomadatravelblog.netlify.app",
-		githubLink:
-			"https://github.com/MarianoFranco/Project_exam_1_Mariano_Franco",
+		githubLink: "https://github.com/MarianoFranco/museum-1sem-project",
 	},
 	{
 		title: "Campshop",
